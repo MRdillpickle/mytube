@@ -1,0 +1,277 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+}
+body{
+    width: 99%;
+    height: 100%;
+}
+#video-tag{
+    position: fixed;
+    width: 60%;
+    z-index: 1;
+    height: 60%;
+    margin-top: 70px;
+    background-color: rgb(223, 223, 223);
+}
+#input-tag{
+    visibility:hidden;
+    width: 0px;
+}
+#upload{
+    background-color: aliceblue;
+    color: black;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    width: 10%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 60px;
+    font-size: 30px;
+    z-index: 5;
+}
+#logo{
+    background-color: lightcoral;
+    color: black;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    width: 10%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 60px;
+    font-size: 30px;
+    z-index: 5;
+}
+.suggestions{
+    position: absolute;
+    right: 50px;
+    top: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100% - 250px);
+    width: 30%;
+}
+.advert{
+    position: absolute;
+    top: 100px;
+    right: 5%;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    padding: 10px;
+    width: 25%;
+    height: 10%;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+#adImage{
+    width: 30%;
+    height: 100%;
+}
+#adText{
+    position: absolute;
+    top: 0;
+    left:32%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#adText::after{
+    content: " - Adverisment";
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(174, 174, 174);
+}
+.minor{
+    width: 90%;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    color: black;
+    background-color: aliceblue;
+    height: 40px;
+    font-size: 20px;
+    text-align: left;
+}
+.minor::after{
+    content: " ~ local";
+    color: red;
+    text-align: right;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+#title{
+    position: absolute;
+    top: 75%;
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+}
+#save{
+    position: absolute;
+    top: 75%;
+    width: 7%;
+    left: 52%;
+    height: 35px;
+    font-size: 15px;
+}
+#play_button{
+    position: absolute;
+    top: 68%;
+    width: 40px;
+    height: 40px;
+    z-index: 6;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    font-size: 15px;
+}
+#play_button:hover{
+    background-color: red;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#seekslider{
+    position: absolute;
+    top: 65%;
+    width: 60%;
+    left: 0.5%;
+    z-index: 5;
+    height: 40px;
+    appearance: none;
+    transition-duration: 0.3s;
+    background-color: #44444400;
+}
+#seekslider:focus{
+    outline: none;
+    
+}
+#play_display{
+    position: absolute;
+    top:35%;
+    left: 30%;
+    font-size: 30px;
+    background-color: #000000b3;
+    border-radius: 90px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    animation-name: display;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-play-state:running;
+    text-anchor: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 6;
+}
+
+@keyframes display {
+    0%{
+        opacity: 0;
+        visibility: visible;
+        width: 0px;
+        font-size: 0px;
+        top: calc(35% + 20px);
+        left: calc(30% + 20px);
+        height: 0px;
+    }
+    30%{
+        opacity: 1;
+        width: 40px;
+        font-size: 30px;
+        top: 35%;
+        height: 40px;
+        left: 30%;
+    }
+    70%{
+        opacity: 1;
+        width: 40px;
+        font-size: 30px;
+        top: 35%;
+        height: 40px;
+        left: 30%;
+    }
+    100%{
+        width: 0px;
+        font-size: 0px;
+        top: calc(35% + 20px);
+        left: calc(30% + 20px);
+        height: 0px;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+#seekslider::-webkit-slider-runnable-track:hover{
+    cursor: pointer;
+    background: rgba(153, 153, 153, 0.485);
+    border-radius: 15px;
+    border-style: none;
+    border-width: 0px;
+    height: 20px;
+    transition-duration: 0.3s;
+}
+#seekslider::-webkit-slider-thumb{
+    height: 20px;
+    width: 20px;
+    border-radius: 90px;
+    background: #ff000028;
+    cursor: ew-resize;
+    -webkit-appearance: none;  
+}
+#seekslider::-webkit-slider-thumb:hover{
+  height: 20px;
+  width: 20px;
+  border-radius: 90px;
+  background: #ff0000;
+  cursor: ew-resize;
+  -webkit-appearance: none;
+}
+#vol{
+    position: absolute;
+    top: 69.2%;
+    left: 45%;
+    z-index: 6;
+    appearance: none;
+    transition-duration: 0.3s;
+    background: #00000000;
+}
+#vol::-webkit-slider-runnable-track{
+    visibility: none;
+    color: #ff000028;
+    background: #ff000000;
+    border-radius: 15px;
+}
+#vol::-webkit-slider-runnable-track:hover{
+    background: rgba(153, 153, 153, 0.485);
+}
+#vol::-webkit-slider-thumb{
+    background: #ff000028;
+    visibility: none;
+    border-radius: 90px;
+    width: 10px;
+    height: 10px;
+    -webkit-appearance: none;
+}
+#vol::-webkit-slider-thumb:hover{
+    background: red;
+}
+#seektime{
+    position: absolute;
+    top: 69%;
+    left: 5%;
+    font-size: 20px;
+    color: gray;
+    z-index: 6;
+}
+
+.adB{
+    background-color: aquamarine;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+}
